@@ -14,3 +14,11 @@ export interface UserInfo {
   phone: string;
   permission: Permission;
 }
+
+export interface UserState {
+  userInfo: UserInfo | null;
+}
+
+export const initialState: UserState = {
+  userInfo: null,
+};

@@ -1,4 +1,4 @@
-import { UserState } from '../../store/user/user-info.reducer';
+import { UserState } from "./user-info.model";
 
 export interface AppState {
   userInfo: UserState;
