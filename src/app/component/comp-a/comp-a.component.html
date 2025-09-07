@@ -1,0 +1,25 @@
+<ng-container *ngIf="role$ | async as role">
+  <h2>Permission:</h2>
+
+  <!-- Nếu là Admin -->
+  <ng-container *ngIf="role.isAdmin; else notAdmin">
+    <button>Thêm</button>
+  </ng-container>
+
+  <ng-template #notAdmin>
+    <button>Xem</button>
+  </ng-template>
+
+  <!-- Nếu là Editor -->
+  <span *ngIf="role.isEditor">
+    <button>Chỉnh sửa</button>
+  </span>
+
+  <!-- Nếu là User -->
+  <span *ngIf="role.isUser">
+    <button>Tải xuống</button>
+  </span>
+</ng-container>
+
+<!-- <input [(ngModel)]="newName" class="input-name" placeholder="Nhập tên mới..." />
+<button (click)="onChangeName()">Đổi tên</button> -->
